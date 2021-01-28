@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import UserSignUpPage from "./pages/UserSignUpPage";
+import * as apiCalls from "./api/apicalls";
+import LoginPage from "./pages/LoginPage";
+
+const actions = {
+  postSignUp: apiCalls.signUp,
+  login: apiCalls.login,
+  login2: apiCalls.login2,
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserSignUpPage actions={actions} />
+      <LoginPage actions={actions} />
     </div>
   );
 }
